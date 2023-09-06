@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(#030204, #447);
+}
+.Container {
+    position: relative;
+    display: flex;
+    gap: 70px;
+
+}
+.Container .Caixa {
+    position: relative;
+    top: 40;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 15px;
+    background-size: cover;
+    transition: .5s;
+    cursor: pointer;
+}
+ .Container .Caixa:hover{
+    scale: 1.2;
+    transition: .5s;
+ }
+.Container .Caixa::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 35px;
+    background-size: cover;
+    filter: blur(25px);
+    opacity: 0.5;
+    z-index: 1;
+    transition: .2s;
+}
+.Container.Caixa:hover::before{
+    opacity: 0;
+    transition: .2s;
+}
